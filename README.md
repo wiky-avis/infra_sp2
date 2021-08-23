@@ -32,7 +32,7 @@ Python 3, Django 3, Django REST Framework, Docker, PostgreSQL, Simple-JWT, GIT.
 
 Склонируйте репозиторий на локальную машину:
 
-  `https://github.com/wiky-avis/api_yamdb.git`
+  `git clone https://github.com/wiky-avis/api_yamdb.git`
 
 Создайте файл .env в корневой папке проекта с таким содержимым:
 
