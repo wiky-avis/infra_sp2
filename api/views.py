@@ -17,12 +17,12 @@ from titles.models import Category, Genre, Review, Title
 
 from .filters import TitlesFilter
 from .permissions import IsAdmin, IsAdminOrReadOnly, IsAuthorOrAdminOrModerator
-from .serializers import (
-    CategorySerializer, CommentSerializer, ForAdminSerializer,
-    ForUserSerializer, GenreSerializer, ReviewSerializer,
-    SendConfirmationCodeSerializer, TitleReadSerializer, TitleWriteSerializer,
-    СheckingConfirmationCodeSerializer,
-)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          ForAdminSerializer, ForUserSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          SendConfirmationCodeSerializer, TitleReadSerializer,
+                          TitleWriteSerializer,
+                          СheckingConfirmationCodeSerializer)
 
 User = get_user_model()
 

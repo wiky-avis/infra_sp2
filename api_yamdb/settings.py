@@ -1,19 +1,19 @@
 import os
 from datetime import timedelta
 
+from environ import Env
+
+env = Env()
+env.read_env()
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
+SECRET_KEY = env.str('SECRET_KEY', 'change_me_im_insecure_django-insecure-9@-xdh)!9ul&#a10clxas#owiu5v4(297s&+gmj$*9z3lclaa)')
 
+DEBUG = env.bool('DEBUG', True)
 
-DEBUG = False
-
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '[::1]',
-    '*']
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
 
 
 INSTALLED_APPS = [
@@ -68,10 +68,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['DB_HOST'],
+        'PORT': os.environ['DB_PORT'],
     }
 }
 
@@ -131,4 +131,4 @@ AUTH_USER_MODEL = 'titles.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
-EMAIL_ADMIN = 'admin@yamdb.ru'
+EMAIL_ADMIN = env.str('EMAIL_ADMIN', 'test@test.ru')
