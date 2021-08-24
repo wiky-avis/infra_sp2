@@ -13,7 +13,7 @@ SECRET_KEY = env.str('SECRET_KEY', 'change_me_im_insecure_django-insecure-9@-xdh
 
 DEBUG = env.bool('DEBUG', True)
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS'].split(',')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', [])
 
 
 INSTALLED_APPS = [
