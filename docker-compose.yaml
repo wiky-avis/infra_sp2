@@ -16,7 +16,6 @@ services:
     restart: always
     volumes:
       - static_value:/code/static/
-
       - media_value:/code/media/
     depends_on:
       - db
@@ -25,15 +24,12 @@ services:
 
   nginx:
     image: nginx:1.19.3
-
     ports:
       - "80:80"
-
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/var/html/static/
       - media_value:/var/html/media/
-
     depends_on:
       - web
 
