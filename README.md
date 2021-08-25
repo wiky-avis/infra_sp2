@@ -43,7 +43,7 @@ Python 3, Django 3, Django REST Framework, Docker, PostgreSQL, Simple-JWT, GIT.
     POSTGRES_PASSWORD=postgres
     DB_HOST=db
     DB_PORT=5432
-    SECRET_KEY=`Your secret key`
+    SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
     DEBUG=False
     ALLOWED_HOSTS=localhost 127.0.0.1 [::1] *
     EMAIL_ADMIN=admin@yamdb.ru
