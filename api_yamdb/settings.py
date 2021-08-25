@@ -13,13 +13,12 @@ SECRET_KEY = env.str('SECRET_KEY', 'change_me_im_insecure_django-insecure-9@-xdh
 
 DEBUG = env.bool('DEBUG', True)
 
-# ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
+# ALLOWED_HOSTS = env('ALLOWED_HOSTS').split() # тесты на яндексе не проходят с этой настройкой
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '[::1]',
-    '*'
-    ]
+    '*']
 
 
 INSTALLED_APPS = [
