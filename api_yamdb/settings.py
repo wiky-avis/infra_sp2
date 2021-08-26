@@ -9,16 +9,11 @@ env.read_env()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = env.str('SECRET_KEY', 'change_me_im_insecure_django-insecure-9@-xdh)!9ul&#a10clxas#owiu5v4(297s&+gmj$*9z3lclaa)')
+SECRET_KEY = env.str('SECRET_KEY')
 
-DEBUG = env.bool('DEBUG', True)
+DEBUG = env.bool('DEBUG')
 
-# ALLOWED_HOSTS = env('ALLOWED_HOSTS').split() # тесты на яндексе не проходят с этой настройкой
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '[::1]',
-    '*']
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
 
 
 INSTALLED_APPS = [
@@ -136,4 +131,4 @@ AUTH_USER_MODEL = 'titles.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
-EMAIL_ADMIN = env.str('EMAIL_ADMIN', 'test@test.ru')
+EMAIL_ADMIN = env.str('EMAIL_ADMIN')

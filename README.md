@@ -34,21 +34,6 @@ Python 3, Django 3, Django REST Framework, Docker, PostgreSQL, Simple-JWT, GIT.
 
   `git clone https://github.com/wiky-avis/api_yamdb.git`
 
-Создайте файл .env в корневой папке проекта с таким содержимым:
-
-  ```
-    DB_ENGINE=django.db.backends.postgresql
-    DB_NAME=postgres
-    POSTGRES_USER=postgres
-    POSTGRES_PASSWORD=postgres
-    DB_HOST=db
-    DB_PORT=5432
-    SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
-    DEBUG=False
-    ALLOWED_HOSTS = localhost,127.0.0.1,[::1],*
-    EMAIL_ADMIN = admin@yamdb.ru
-  ```
-
 Запустите docker-compose:
 
   `docker-compose up -d`
