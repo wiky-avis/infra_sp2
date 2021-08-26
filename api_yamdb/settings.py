@@ -3,17 +3,16 @@ from datetime import timedelta
 
 from environ import Env
 
-env = Env()
-env.read_env()
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+env = Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env.str('SECRET_KEY')
 
-DEBUG = False
+DEBUG = env.bool('DEBUG')
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
+ALLOWED_HOSTS = env.str('ALLOWED_HOSTS').split()
 
 
 INSTALLED_APPS = [
